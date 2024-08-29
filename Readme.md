@@ -1,7 +1,7 @@
 <h2 align=center> Nillion Verifier Node Guide </h2>
 
 <p align="center">
-<img src='photo_2024-08-29_14-57-45.jpg' style="width:1000px;height:600px;">
+<img src='photo_2024-08-29_14-57-45.jpg' style="width:800px;height:500px;">
 </p>
 
 
@@ -11,7 +11,7 @@
 - Open your Keplr wallet, search for `nillion` , u will get your nillion address
 - Now request nillion faucet from [here](https://faucet.testnet.nillion.com/)
 
-## 1/ Copy and Past Command Your Terminal (WSL/VPS)
+## 1/ Copy and Past Command Your Terminal
 
 ```
 wget -q -O nillion.sh https://raw.githubusercontent.com/BidyutRoy2/Nillion-Node/main/nillion.sh && sudo chmod +x nillion.sh && ./nillion.sh
