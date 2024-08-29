@@ -39,27 +39,27 @@ cat ~/nillion/accuser/credentials.json
 ## Once you have the details required to register the accuser, you can run the accuser in the same directory. Ensure that your accusor has some funds, by going to the Nillion faucet
 
 ```
-sudo docker run -d --name nillion -v $HOME/nillion/accuser:/var/tmp nillion/retailtoken-accuser:v1.0.0 accuse --rpc-endpoint "https://testnet-nillion-rpc.lavenderfive.com" --block-start 5112621
+docker run -v ./nillion/accuser:/var/tmp nillion/retailtoken-accuser:v1.0.0 accuse --rpc-endpoint "https://testnet-nillion-rpc.lavenderfive.com" --block-start 5129680
 ```
 
 ## Check the node logs
 ```
-sudo docker logs -f nillion --tail=50
+docker logs -f nillion --tail=50
 ```
 
 ## Check registration status:
 ```
-sudo docker logs --tail=1000000 nillion | grep -A 2 Registered | tail -3
+docker logs --tail=1000000 nillion | grep -A 2 Registered | tail -3
 ```
 
 ## Restart the node:
 ```
-sudo docker restart nillion
+docker restart nillion
 ```
 
 ## Stop the node:
 ```
-sudo docker stop nillion
+docker stop nillion
 ```
 
 # Done 
