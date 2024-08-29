@@ -11,43 +11,72 @@
 - Open your Keplr wallet, search for `nillion` , u will get your nillion address
 - Now request nillion faucet from [here](https://faucet.testnet.nillion.com/)
 
+## 1/ Copy and Past Command Your Terminal (WSL/VPS)
 
-## 1/ Use this command to install docker on your system
-```bash
-sudo apt update -y && sudo apt install -y apt-transport-https ca-certificates curl software-properties-common && sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null && sudo apt update -y && apt-cache policy docker-ce && sudo apt install -y docker-ce && sudo usermod -aG docker ${USER} && su - ${USER} -c "groups" && docker --version
 ```
-## 2/ Use this command to pull nillion accuser image
-```bash
-docker pull nillion/retailtoken-accuser:v1.0.0
+wget -q -O nillion.sh https://raw.githubusercontent.com/BidyutRoy2/Nillion-Node/main/nillion.sh && sudo chmod +x nillion.sh && ./nillion.sh
 ```
-## 3/ Use the below command to create a directory and to initialise the accuser
-```bash
-mkdir -p nillion/accuser && docker run -v ./nillion/accuser:/var/tmp nillion/retailtoken-accuser:v1.0.0 initialise
-```
-- After executing the above command, you will see `accound_id` and `public_key` in your terminal, copy the value
 
-## 4/ Now run this command to get your accuser wallet private key & Import in Keplr Wallet
+## Get Wallet Details Past Command & Import Private In Keplr Wallet
+
 ```bash
 cat ~/nillion/accuser/credentials.json
 ```
-- Copy the private key and save it NotePad , if you lose, you will not regain access to your accuser wallet
+- Copy Save Your Private key , AccountId , PublicKey & Save NotePad
 
-## 5/ Claim Faucet: https://faucet.testnet.nillion.com
+## Claim Faucet: https://faucet.testnet.nillion.com
 - Submit Your Nillion Address & Claim
 
-## 6/ Now visit [this site](https://verifier.nillion.com/verifier)
+## Verify Node Go To: https://verifier.nillion.com/verifier
 
 - Connect Keplr Wallet Import From Node Private Key
-- Submit your `accound_id` and `public_key` in the appropriate field
+- Click `Verifier` & `Linux` `5 Initialsing the Accuser`
+- Submit your `accound_id` and `public_key`
+
+# Running the accuser: YOU MUST WAIT 30-60 MINUTES TO CONTINUE WITH THE STEPS BELOW. The secret verification is designed wait for a period of time before fully registering the accuser
 
 
-<h2 align=center>NOW TAKE A BREAK FOR 60 MINS</h2>
+## Once you have the details required to register the accuser, you can run the accuser in the same directory. Ensure that your accusor has some funds, by going to the Nillion faucet
 
----
-## 7/ After 60 mins, run this final command for Run Node
-```bash
-docker run -v ./nillion/accuser:/var/tmp nillion/retailtoken-accuser:v1.0.0 accuse --rpc-endpoint "https://testnet-nillion-rpc.lavenderfive.com" --block-start 5107613
 ```
+sudo docker run -d --name nillion -v $HOME/nillion/accuser:/var/tmp nillion/retailtoken-accuser:v1.0.0 accuse --rpc-endpoint "https://testnet-nillion-rpc.lavenderfive.com" --block-start 5112621
+```
+
+## Check the node logs
+```
+sudo docker logs -f nillion --tail=50
+```
+
+## Check registration status:
+```
+sudo docker logs --tail=1000000 nillion | grep -A 2 Registered | tail -3
+```
+
+## Restart the node:
+```
+sudo docker restart nillion
+```
+
+## Stop the node:
+```
+sudo docker stop nillion
+```
+
+# Done 
+
+## Detele/Remove the node:
+```
+docker ps - Copy Your Nillion CONTAINER_ID
+docker stop DOCKER_CONTAINER_ID
+docker rm DOCKER_CONTAINER_ID
+rm -rf nillion
+```
+
+```
+sudo docker rm -f nillion
+```
+
+
 
 # ▄︻デ𝙂𝙚𝙩 𝙇𝙖𝙩𝙚𝙨𝙩 𝘼𝙞𝙧𝙙𝙧𝙤𝙥𝙨 & 𝙐𝙥𝙙𝙖𝙩𝙚𝙨═━一
 
