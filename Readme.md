@@ -33,7 +33,7 @@ cat ~/nillion/accuser/credentials.json
 - Click `Verifier` & `Linux` `5 Initialsing the Accuser`
 - Submit your `accound_id` and `public_key`
 
-# Running the accuser: YOU MUST WAIT 30-60 MINUTES TO CONTINUE WITH THE STEPS BELOW. The secret verification is designed wait for a period of time before fully registering the accuser
+## Running the accuser: YOU MUST WAIT 30-60 MINUTES TO CONTINUE WITH THE STEPS BELOW. The secret verification is designed wait for a period of time before fully registering the accuser
 
 
 ## Once you have the details required to register the accuser, you can run the accuser in the same directory. Ensure that your accusor has some funds, by going to the Nillion faucet
