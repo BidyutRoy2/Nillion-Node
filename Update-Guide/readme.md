@@ -1,6 +1,6 @@
 <h2 align=center>Nillion Verifier Node Guide Update</h2>
 
-# If You Already Installed But Show Fasle Delete Old Images and Container
+# If You Already Installed But Show Fasle Delete Old Images and Container Then Run Node Again
 
 ## How to Delete Docker Node Installed File
 
