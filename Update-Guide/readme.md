@@ -4,15 +4,30 @@
 
 ## How to Delete Docker Node Installed File
 
-Check List > `docker ps -a`
+Check List 
+```
+docker ps -a
+```
 
-Stop Containers > `docker stop <Nillion_container_id>`
+Stop Containers
+```
+docker stop <Nillion_container_id>
+```
 
-Remove Containers > `docker rm <Nillion_container_id>`
+Remove Containers
+```
+docker rm <Nillion_container_id>
+```
 
-List All Images > `docker images -a`
+List All Images > 
+```
+docker images -a
+```
 
-Remove Images > `docker rmi <Nillion_image_id>`
+Remove Images > 
+```
+docker rmi <Nillion_image_id>
+```
 
 <details>
   <summary><b>Example</b></summary>
@@ -26,8 +41,10 @@ Remove Images > `docker rmi <Nillion_image_id>`
 </details>
 
 
+# Run New Node Guide
+
+
 - You can use either VPS or Ubuntu on Windows
-- Ubuntu troubleshooting related video is [here](https://x.com/ZunXBT/status/1827779868630876651)
 - Make sure that you have a nillion address, if u have not, you can install [Keplr](https://chromewebstore.google.com/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap) and create a nillion address
 - Open your Keplr wallet, search for `nillion`, click on manage chain and the add nillion testnet to your Keplr wallet
 - Copy this nillion address from Keplr
