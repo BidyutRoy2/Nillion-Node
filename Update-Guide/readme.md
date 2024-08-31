@@ -69,19 +69,25 @@ mkdir -p nillion/accuser && sudo docker run -v ./nillion/accuser:/var/tmp nillio
 cat ~/nillion/accuser/credentials.json
 ```
 - Copy the private key and save it, if you lose, you will not regain access to your accuser wallet
+  
 ---
-<h2 align=center>NOW TAKE A BREAK FOR 60 MINS</h2>
+<h2 align=center>NOW TAKE A BREAK FOR 30/60 MINS</h2>
 
 ---
-- After 60 mins, run these 2 final commands
+- After 30/60 mins, run these 2 final commands
+  
 - Install `jq` now
+  
 ```bash
 sudo apt update && sudo apt install jq
 ```
+
+### Start and Restart Command Same If Your VPS/WSL ShutDown
+
 ```bash
 sudo docker run -v ./nillion/accuser:/var/tmp nillion/retailtoken-accuser:latest accuse --rpc-endpoint "https://testnet-nillion-rpc.lavenderfive.com/" --block-start "$(curl -s https://testnet-nillion-rpc.lavenderfive.com/abci_info | jq -r '.result.response.last_block_height')"
 ```
-
+## Don't Close Node Running Tetminal
 
 # ▄︻デ𝙂𝙚𝙩 𝙇𝙖𝙩𝙚𝙨𝙩 𝘼𝙞𝙧𝙙𝙧𝙤𝙥𝙨 & 𝙐𝙥𝙙𝙖𝙩𝙚𝙨═━一
 
