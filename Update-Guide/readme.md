@@ -1,4 +1,30 @@
-<h2 align=center>Nillion Verifier Node Guide</h2>
+<h2 align=center>Nillion Verifier Node Guide Update</h2>
+
+# If You Already Installed But Show Fasle Delete Old Images and Container
+
+## How to Delete Docker Node Installed File
+
+Check List > `docker ps -a`
+
+Stop Containers > `docker stop <Nillion_container_id>`
+
+Remove Containers > `docker rm <Nillion_container_id>`
+
+List All Images > `docker images -a`
+
+Remove Images > `docker rmi <Nillion_image_id>`
+
+<details>
+  <summary><b>Example</b></summary>
+  <ul>
+    <code>docker stop 88f734545bc8</code>
+    <br>
+    <code>docker rm 88f734545bc8</code>
+    <br>
+    <code>docker rmi d1cc47dd3dec</code>
+  </ul>
+</details>
+
 
 - You can use either VPS or Ubuntu on Windows
 - Ubuntu troubleshooting related video is [here](https://x.com/ZunXBT/status/1827779868630876651)
